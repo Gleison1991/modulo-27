@@ -1,47 +1,39 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+<div class="container">
+  <h1>Calculadora Aritmética</h1>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
+Primeiro Número <br />
+<input id="n1" type="number" /><br />
+Segundo Número <br />
+<input id="n2" type="number" /><br /><br />
 
-  <main>
-    <TheWelcome />
-  </main>
+<button :@click="somar()" >Somar</button>
+<button :@click="subtrair()" >Subtrair</button>
+<button :@click="multiplicar()" >Multiplicar</button>
+<button :@click="dividir()" >Dividir</button>
+<br /><br />
+O resultado é <span></span>
+</div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
+<script>
+  var n1 = document.querySelector('#n1')
+  var n2 = document.querySelector('#n2')
+  var resultado = document.querySelector('span')
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+  function somar() {
+    resultado.innerHTML = parseInt(n1.value) + parseInt(n2.value)
   }
 
-  .logo {
-    margin: 0 2rem 0 0;
+  function subtrair() {
+    resultado.innerHTML = parseInt(n1.value) - parseInt(n2.value)
   }
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+  function multiplicar() {
+    resultado.innerHTML = parseInt(n1.value) * parseInt(n2.value)
   }
-}
-</style>
+
+  function dividir() {
+    resultado.innerHTML = parseInt(n1.value) / parseInt(n2.value)
+  }
+</script>
