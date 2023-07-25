@@ -16,10 +16,10 @@ O resultado é <span></span>
 </div>
 </template>
 
-<script>
-  var n1 = document.querySelector('#n1')
-  var n2 = document.querySelector('#n2')
-  var resultado = document.querySelector('span')
+<script setup>
+  const n1 = document.querySelector('#n1')
+  const n2 = document.querySelector('#n2')
+  const resultado = document.querySelector('span')
 
   function somar() {
     resultado.innerHTML = parseInt(n1.value) + parseInt(n2.value)
